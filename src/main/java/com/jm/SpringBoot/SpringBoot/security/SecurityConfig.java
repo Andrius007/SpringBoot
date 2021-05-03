@@ -36,7 +36,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin").hasAnyRole("ADMIN","USER")
                 .antMatchers("/user/{id}").hasAnyRole("ADMIN", "USER")
                 .antMatchers("/admin/**").hasRole("ADMIN")
-//                                .antMatchers("/admin/**", "/hello").anonymous()
                 .and()
                 .formLogin()
                 .successHandler(loginSuccessHandler)
